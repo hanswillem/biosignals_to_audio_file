@@ -1,4 +1,4 @@
-#!/Users/hanswillemgijzel/anaconda/bin/python
+#!/usr/bin/python
 
 """converts csv data in .txt format to a .wav file"""
 

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/Users/hanswillemgijzel/anaconda/bin/python
 
 """converts csv data in .txt format to a .wav file"""
 
@@ -48,12 +48,11 @@ def main():
 
     def makeWavetable(waveFile, a):
         wv = wave.open(waveFile, 'w')
-        wv.setparams((2, 2, 44100, 0, 'NONE', 'not compressed'))
+        wv.setparams((1, 2, 44100, 0, 'NONE', 'not compressed'))
         for i in range(len(a)):
                 value = a[i]
                 packed_value = struct.pack('h', value)
                 wv.writeframes(packed_value)
-                wv.writeframes(packed_value) # there are 2 chanels, so the value needs to be written 2 times
         wv.close()
 
 

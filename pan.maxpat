@@ -6,7 +6,6 @@
 				"patching_rect" : [ 149.0, 540.0, 62.0, 20.0 ],
 				"style" : "",
 				"numinlets" : 1,
-				"presentation_rect" : [ 103.5, 543.0, 0.0, 0.0 ],
 				"numoutlets" : 0,
 				"id" : "obj-24"
 			}
@@ -20,7 +19,6 @@
 				"patching_rect" : [ 219.0, 257.0, 196.0, 34.0 ],
 				"style" : "",
 				"numinlets" : 1,
-				"presentation_rect" : [ 257.0, 266.0, 0.0, 0.0 ],
 				"numoutlets" : 0,
 				"id" : "obj-20"
 			}
@@ -33,7 +31,6 @@
 				"patching_rect" : [ 55.5, 131.0, 55.0, 20.0 ],
 				"style" : "",
 				"numinlets" : 1,
-				"presentation_rect" : [ 34.5, 137.0, 0.0, 0.0 ],
 				"numoutlets" : 0,
 				"id" : "obj-17"
 			}
@@ -58,7 +55,6 @@
 				"patching_rect" : [ 529.5, 376.0, 19.0, 20.0 ],
 				"style" : "",
 				"numinlets" : 1,
-				"presentation_rect" : [ 234.0, 490.0, 0.0, 0.0 ],
 				"numoutlets" : 0,
 				"id" : "obj-13"
 			}
@@ -79,11 +75,10 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "comment",
-				"text" : "B = sqrt ( 2 ) / 2 * cos ( amplitude ) - sin ( amplitude )",
-				"patching_rect" : [ 12.0, 72.0, 292.0, 20.0 ],
+				"text" : "B = sqrt ( 2 ) / 2 * ( cos ( amplitude ) - sin ( amplitude ) )",
+				"patching_rect" : [ 12.0, 72.0, 304.0, 20.0 ],
 				"style" : "",
 				"numinlets" : 1,
-				"presentation_rect" : [ 32.0, 88.0, 0.0, 0.0 ],
 				"numoutlets" : 0,
 				"id" : "obj-9"
 			}
@@ -92,8 +87,8 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "comment",
-				"text" : "A = sqrt ( 2 ) / 2 * cos ( amplitude ) + sin ( amplitude )",
-				"patching_rect" : [ 12.0, 52.0, 292.0, 20.0 ],
+				"text" : "A = sqrt ( 2 ) / 2 * ( cos ( amplitude ) + sin ( amplitude ) )",
+				"patching_rect" : [ 12.0, 52.0, 307.0, 20.0 ],
 				"style" : "",
 				"numinlets" : 1,
 				"numoutlets" : 0,

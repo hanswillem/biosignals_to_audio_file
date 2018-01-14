@@ -1,6 +1,6 @@
 #!/Users/hanswillemgijzel/anaconda/bin/python
 
-"""converts csv data in .txt format to a .wav file"""
+"""converts csv data into a .wav file"""
 
 # Command line application install instructions Mac OSX:
 #

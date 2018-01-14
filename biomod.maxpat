@@ -1982,7 +1982,7 @@
 						"modernui" : 1
 					}
 ,
-					"rect" : [ 964.0, 196.0, 776.0, 638.0 ],
+					"rect" : [ 766.0, 163.0, 776.0, 638.0 ],
 					"bglocked" : 0,
 					"openinpresentation" : 0,
 					"default_fontsize" : 12.0,
@@ -2010,6 +2010,18 @@
 					"style" : "",
 					"subpatcher_template" : "",
 					"boxes" : [ 						{
+							"box" : 							{
+								"maxclass" : "comment",
+								"text" : "angle",
+								"patching_rect" : [ 168.0, 225.0, 40.0, 20.0 ],
+								"id" : "obj-3",
+								"numinlets" : 1,
+								"style" : "",
+								"numoutlets" : 0
+							}
+
+						}
+, 						{
 							"box" : 							{
 								"maxclass" : "comment",
 								"text" : "signal out",
@@ -2085,7 +2097,7 @@
 , 						{
 							"box" : 							{
 								"maxclass" : "comment",
-								"text" : "B = sqrt ( 2 ) / 2 * ( cos ( amplitude ) - sin ( amplitude ) )",
+								"text" : "B = sqrt ( 2 ) / 2 * ( cos ( angle ) - sin ( angle ) )",
 								"patching_rect" : [ 15.0, 83.0, 304.0, 20.0 ],
 								"id" : "obj-9",
 								"numinlets" : 1,
@@ -2097,7 +2109,7 @@
 , 						{
 							"box" : 							{
 								"maxclass" : "comment",
-								"text" : "A = sqrt ( 2 ) / 2 * ( cos ( amplitude ) + sin ( amplitude ) )",
+								"text" : "A = sqrt ( 2 ) / 2 * ( cos ( angle ) + sin ( angle ) )",
 								"patching_rect" : [ 15.0, 63.0, 307.0, 20.0 ],
 								"id" : "obj-8",
 								"numinlets" : 1,

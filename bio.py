@@ -10,8 +10,8 @@
 #
 # how to use:
 #
-# In terminal type 'csv2wav' + SPACE + filename of the .csv file + SPACE + number of the column in the csv file, and press enter.
-# Example: "csv2wav myFile.csv 5"
+# In terminal type 'bio' + SPACE + filename of the .csv file + SPACE + number of the column in the csv file, and press enter.
+# Example: "bio myFile.csv 5"
 # The .wav file will have the same name as the .csv file, appended with the column number, and will be put in the same folder.
 
 

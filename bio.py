@@ -16,12 +16,10 @@
 # Example: "bio myFile.csv 5"
 # The .wav file will have the same name as the .csv file, appended with the column number, and will be put in the same folder.
 
-
 import sys
 import csv
 import wave
 import struct
-
 
 def main():
 
@@ -36,7 +34,6 @@ def main():
                     pass
         return arr
 
-
     # scale the array
     def scaleArray(a):
         temp_a = [abs(i) for i in a]
@@ -47,7 +44,6 @@ def main():
             a[i] = int(a[i])
         return a
 
-
     def makeWavetable(waveFile, a):
         wv = wave.open(waveFile, 'w')
         wv.setparams((1, 2, 44100, 0, 'NONE', 'not compressed'))
@@ -56,7 +52,7 @@ def main():
                 packed_value = struct.pack('h', value)
                 wv.writeframes(packed_value)
         wv.close()
-    
+
     def makeSingleWavefile():
         # make wavefile name
         coln = int(sys.argv[2])
@@ -65,7 +61,7 @@ def main():
         scaledCol = scaleArray(col)
         makeWavetable(waveFile, scaledCol)
         print('finished!')
-    
+
 
     def makeMultipleWaveFiles():
         coln = 1
@@ -80,15 +76,12 @@ def main():
             coln += 1
         print("finished!")
 
-
     # get input from user
     CSVFile = sys.argv[1]
     if len(sys.argv) == 2:
         makeMultipleWaveFiles()
     else:
         makeSingleWavefile()
-
-
 
 if __name__ == '__main__':
     main()

@@ -1,6 +1,6 @@
 #!/Users/hanswillemgijzel/anaconda/bin/python
 
-"""converts csv data into a .wav file"""
+"""converts csv data into .wav file(s)"""
 
 # Command line application install instructions Mac OSX:
 #
@@ -11,6 +11,8 @@
 # how to use:
 #
 # In terminal type 'bio' + SPACE + filename of the .csv file + SPACE + number of the column in the csv file, and press enter.
+# When no column number is given, all columns will be coverted to seperate .wav files. 
+#
 # Example: "bio myFile.csv 5"
 # The .wav file will have the same name as the .csv file, appended with the column number, and will be put in the same folder.
 
@@ -54,19 +56,38 @@ def main():
                 packed_value = struct.pack('h', value)
                 wv.writeframes(packed_value)
         wv.close()
+    
+    def makeSingleWavefile():
+        # make wavefile name
+        coln = int(sys.argv[2])
+        col = getColumnFromCSV(CSVFile, coln)
+        waveFile = CSVFile[0:-4] + '_' + str(coln) + '.wav'
+        scaledCol = scaleArray(col)
+        makeWavetable(waveFile, scaledCol)
+        print('finished!')
+    
+
+    def makeMultipleWaveFiles():
+        coln = 1
+        while True:
+            try:
+                col = col = getColumnFromCSV(CSVFile, coln)
+                waveFile = CSVFile[0:-4] + '_' + str(coln) + '.wav'
+                scaledCol = scaleArray(col)
+                makeWavetable(waveFile, scaledCol)
+            except:
+                break
+            coln += 1
+        print("finished!")
 
 
     # get input from user
     CSVFile = sys.argv[1]
-    coln = int(sys.argv[2])
-    # make wavefile name
-    waveFile = CSVFile[0:-4] + '_' + str(coln) + '.wav'
+    if len(sys.argv) == 2:
+        makeMultipleWaveFiles()
+    else:
+        makeSingleWavefile()
 
-
-    col = getColumnFromCSV(CSVFile, coln)
-    scaledCol = scaleArray(col)
-    makeWavetable(waveFile, scaledCol)
-    print('finished!')
 
 
 if __name__ == '__main__':

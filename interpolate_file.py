@@ -1,3 +1,10 @@
+"""Interpolates .wav files"""
+
+# how to use:
+#
+# Example: "python3 interpolate_file.py filename.wav -i 8"
+# -i 8 means interpolate between samples that are 2048/8 (256) samples apart.
+# The .wav file will be put in the same folder.
 
 import sys
 import wave

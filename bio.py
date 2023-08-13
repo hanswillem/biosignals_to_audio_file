@@ -2,7 +2,7 @@
 
 # how to use:
 #
-# Example: "bio myFile.csv -n 5"
+# Example: "python3 bio.py myFile.csv -n 5"
 # If the -n is left empty all columns will be exported as wave files.
 # The .wav file(s) will have the same name as the .csv file, appended with the column number, and will be put in the a new folder.
 

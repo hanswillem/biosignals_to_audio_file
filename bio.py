@@ -3,12 +3,14 @@
 # how to use:
 #
 # Example: "bio myFile.csv -n 5"
-# The .wav file will have the same name as the .csv file, appended with the column number, and will be put in the same folder.
+# If the -n is left empty all columns will be exported as wave files.
+# The .wav file(s) will have the same name as the .csv file, appended with the column number, and will be put in the a new folder.
 
 import csv
 import wave
 import struct
 import argparse
+import os
 
 def main():
     def getColumnFromCSV(fn, n):
@@ -46,7 +48,7 @@ def main():
         # make wavefile name
         coln = args.num
         col = getColumnFromCSV(args.CSVFile, coln)
-        waveFile = args.CSVFile[0:-4] + '_' + str(coln) + '.wav'
+        waveFile = os.path.join(output_directory, os.path.basename(args.CSVFile[0:-4])) + '_' + str(coln) + '.wav'
         scaledCol = scaleArray(col)
         makeWavetable(waveFile, scaledCol)
         print('finished!')
@@ -56,7 +58,7 @@ def main():
         while True:
             try:
                 col = col = getColumnFromCSV(args.CSVFile, coln)
-                waveFile = args.CSVFile[0:-4] + '_' + str(coln) + '.wav'
+                waveFile = os.path.join(output_directory, os.path.basename(args.CSVFile[0:-4])) + '_' + str(coln) + '.wav'
                 scaledCol = scaleArray(col)
                 makeWavetable(waveFile, scaledCol)
             except:
@@ -69,6 +71,11 @@ def main():
     parser.add_argument("CSVFile", help = "The input csv file.")
     parser.add_argument("-n", "--num", default = 0, help = "The number of the signal to convert.", type = int)
     args = parser.parse_args()
+
+    # Creating a new directory for the output .wav files
+    output_directory = os.path.splitext(args.CSVFile)[0] + "_wav_files"
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
 
     if args.num == 0:
         makeMultipleWaveFiles()

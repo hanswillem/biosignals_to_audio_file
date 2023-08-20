@@ -1,9 +1,8 @@
-"""converts csv data from physionet.org. into .wav file(s)"""
+"""converts csv data from physionet.org. into .wav files"""
 
 # how to use:
 #
-# Example: "python3 bio.py myFile.csv -n 5"
-# If the -n is left empty all columns will be exported as wave files.
+# Example: "python3 bio.py myFile.csv"
 # The .wav file(s) will have the same name as the .csv file, appended with the column number, and will be put in the a new folder.
 
 import csv
@@ -13,6 +12,7 @@ import argparse
 import os
 
 def main():
+
     def getColumnFromCSV(fn, n):
         arr = []
         with open(fn, 'rt') as f:
@@ -35,6 +35,7 @@ def main():
             a[i] = int(a[i])
         return a
 
+
     def makeWavetable(waveFile, a):
         wv = wave.open(waveFile, 'w')
         wv.setparams((1, 2, 44100, 0, 'NONE', 'not compressed'))
@@ -44,14 +45,6 @@ def main():
             wv.writeframes(packed_value)
         wv.close()
 
-    def makeSingleWavefile():
-        # make wavefile name
-        coln = args.num
-        col = getColumnFromCSV(args.CSVFile, coln)
-        waveFile = os.path.join(output_directory, os.path.basename(args.CSVFile[0:-4])) + '_' + str(coln) + '.wav'
-        scaledCol = scaleArray(col)
-        makeWavetable(waveFile, scaledCol)
-        print('finished!')
 
     def makeMultipleWaveFiles():
         coln = 1
@@ -66,10 +59,10 @@ def main():
             coln += 1
         print("finished!")
 
+
     # argparser
     parser = argparse.ArgumentParser()
     parser.add_argument("CSVFile", help = "The input csv file.")
-    parser.add_argument("-n", "--num", default = 0, help = "The number of the signal to convert.", type = int)
     args = parser.parse_args()
 
     # Creating a new directory for the output .wav files
@@ -77,10 +70,8 @@ def main():
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
 
-    if args.num == 0:
-        makeMultipleWaveFiles()
-    else:
-        makeSingleWavefile()
+    makeMultipleWaveFiles()
+
 
 if __name__ == '__main__':
     main()

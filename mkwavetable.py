@@ -2,7 +2,7 @@
 
 # how to use:
 #
-# python3 mkwavetable [foldername]"
+# python3 mkwavetable.py [foldername]"
 # The .wav files will be put in a new folder.
 
 import wave

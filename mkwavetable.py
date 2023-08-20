@@ -1,3 +1,10 @@
+"""Turns a folder of wav files into wavetable files of 4096 samples long."""
+
+# how to use:
+#
+# python3 mkwavetable [foldername]"
+# The .wav files will be put in a new folder.
+
 import wave
 import argparse
 import array

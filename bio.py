@@ -57,7 +57,7 @@ def main():
         coln = 1
         while True:
             try:
-                col = col = getColumnFromCSV(args.CSVFile, coln)
+                col = getColumnFromCSV(args.CSVFile, coln)
                 waveFile = os.path.join(output_directory, os.path.basename(args.CSVFile[0:-4])) + '_' + str(coln) + '.wav'
                 scaledCol = scaleArray(col)
                 makeWavetable(waveFile, scaledCol)

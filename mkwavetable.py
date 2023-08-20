@@ -2,7 +2,9 @@
 
 # how to use:
 #
-# python3 mkwavetable.py [foldername]"
+# python3 mkwavetable.py [foldername] -i 8
+# 
+# The -i 8 is an interpolation factor. Lower number means simpler wave files. The default is 8.
 # The .wav files will be put in a new folder.
 
 import wave

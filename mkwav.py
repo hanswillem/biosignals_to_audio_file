@@ -2,8 +2,8 @@
 
 # how to use:
 #
-# Example: "python3 bio.py myFile.csv"
-# The .wav file(s) will have the same name as the .csv file, appended with the column number, and will be put in the a new folder.
+# python3 mkwav.py [folder]
+# The .wav files will be put in a new folder.
 
 import csv
 import wave

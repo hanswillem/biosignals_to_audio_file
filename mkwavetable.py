@@ -12,9 +12,9 @@ import argparse
 import array
 import os
 
-def interpolate_audio(input_file, i_factor=8):
+def interpolate_audio(input_file, i_factor=16):
     # Calculate interpolation factor
-    actual_factor = 2048 // i_factor
+    actual_factor = 4096 // i_factor
     
     # Load the WAV file
     with wave.open(input_file, "r") as wav_file:
@@ -116,7 +116,7 @@ def interpolate_adjust_and_extract(input_file, i_factor=8, segment_length=4096):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Interpolate and adjust WAV audio files.")
     parser.add_argument("folder", type=str, help="Name of the folder containing audio files to be processed.")
-    parser.add_argument("-i", "--interpolate", type=int, default=8, help="Interpolation factor (default is 8).")
+    parser.add_argument("-i", "--interpolate", type=int, default=8, help="Interpolation factor (default is 16).")
     args = parser.parse_args()
 
     # Process all WAV files in the specified directory

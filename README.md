@@ -1,12 +1,12 @@
 # Biosignals to audio
 
-# How to use
+## How to use
 
-# 🙃 Download the EEG data as CSV
+### 🙃 Download the EEG data as CSV
 
 To download EEG data as a CSV file, go to [Physiobank ATM](https://archive.physionet.org/cgi-bin/atm/ATM) and locate the CHB-MIT Scalp EEG database. If you're looking for records containing seizures, check out the [Seizures](https://www.notion.so/Seizures-d4ba8237701b41c9a4e3f92747dc1907?pvs=21)  page. For best results you need to download CSV data of one minute long.
 
-# 🧑‍💻 Run the python scripts
+### 🧑‍💻 Run the python scripts
 
 After placing the CSV file in a folder, copy both Python scripts found at the bottom of this page to the same folder. Run `mkwav.py` on the CSV file first to output multiple WAV files into a new folder. These files represent the electrodes of the EEG data and are visually similar to the plotted EEG from Physiobank.
 

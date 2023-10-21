@@ -1,7 +1,5 @@
 # Biosignals to audio
 
-## How to use
-
 ### 🙃 Download the EEG data as CSV
 
 To download EEG data as a CSV file, go to [Physiobank ATM](https://archive.physionet.org/cgi-bin/atm/ATM) and locate the CHB-MIT Scalp EEG database. If you're looking for records containing seizures, check out the [Seizures](https://www.notion.so/Seizures-d4ba8237701b41c9a4e3f92747dc1907?pvs=21)  page. For best results you need to download CSV data of one minute long.
